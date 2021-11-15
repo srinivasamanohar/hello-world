@@ -1,3 +1,3 @@
-FROM tomcat:8.0
-RUN cp -R  /usr/local/tomcat/webapps.dist/*  /usr/local/tomcat/webapps
-COPY ./*.war /usr/local/tomcat/webapps
+FROM tomcat:latest
+COPY target/*.war /usr/local/tomcat/webapps
+CMD ["catalina.sh", "run"]
